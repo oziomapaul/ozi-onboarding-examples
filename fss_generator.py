@@ -24,7 +24,12 @@ results = sampler.sample(
 #Q: In flow_shop_scheduler.py, line 304 already does call_stride_solver, so do we need step 4?
 
 decisions = next(model.iter_decisions())
-print(decisions.state(0))
+print("Solution (decisions):", decisions.state(0))
 
-print(results.result())
+order = decisions.state(0).astype(int)   # convert floats to ints
+order_list = order.tolist()
+order_str = " → ".join([f"Job {j}" for j in order_list])
+print(f"The solution (order of jobs on the machines) should be: {order_str}")
+
+#print(results.result())
 print("End!")
