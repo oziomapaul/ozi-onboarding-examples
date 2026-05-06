@@ -13,7 +13,7 @@ def sbrp_disjoint_sets():
     n_schools = 3
 
     # Cab capacities
-    capacities = np.array([2, 3, 1, 2, 5, 4, 2, 3], dtype=int)
+    capacities = np.array([2,3,1,2,5,4,2,3], dtype=int)
     n_cabs = len(capacities)
 
     # School for each student
